@@ -1,0 +1,56 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MainDriver",
+            "request": "launch",
+            "mainClass": "org.westclan.kntools.jp1ajsfigure.MainDriver",
+            "vmArgs": [
+                "-XX:+UseG1GC",
+                "-Xms4096M",
+                "-Xmx8192M",
+                "-XX:MetaspaceSize=512m",
+                "-XX:MaxMetaspaceSize=1024m",
+                //"-Xlog:gc*:file=target\\gc.log:tags,time,uptime",
+                "-Dlog4j2.loggerContextFactory=org.apache.logging.log4j.simple.SimpleLoggerContextFactory"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "FromFileMain",
+            "request": "launch",
+            "mainClass": "org.westclan.kntools.jp1ajsfigure.util.FromFileMain",
+            "args": [
+                "app\\src\\main\\resources\\Template-KnToolsJp1AjsFigure.xlsm",
+                "Target\\FromFileKnToolsJp1AjsFigure.xlsm",
+                "app\\src\\test\\resources\\def\\jp1ajs.def"
+            ],
+            "vmArgs": [
+                "-XX:+UseG1GC",
+                "-Xms4096M",
+                "-Xmx8192M",
+                "-XX:MetaspaceSize=512m",
+                "-XX:MaxMetaspaceSize=1024m",
+                //"-Xlog:gc*:file=target\\gc.log:tags,time,uptime",
+                "-Dlog4j2.loggerContextFactory=org.apache.logging.log4j.simple.SimpleLoggerContextFactory"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "TestDriver",
+            "request": "launch",
+            "mainClass": "org.westclan.kntools.jp1ajsfigure.TestDriver",
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "kntools.jp1ajsfigure.App",
+            "projectName": "app"
+        },
+    ]
+}

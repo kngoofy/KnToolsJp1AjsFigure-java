@@ -1,0 +1,153 @@
+/* ユニット定義ファイル（キャラクターセット：Shift_JIS） */
+unit=test_ajs,,jpluser,;
+{
+    ty=n;
+    cm="test_ajs トップジョブネット コメント欄";
+    sz=10x8;
+    el=NET01,n,+240+240;
+    el=NET02,n,+720+144;
+    el=NET03,n,+720+336;
+    ar=(f=NET01,t=NET02,seq);
+    ar=(f=NET01,t=NET03,seq);
+    sd=1,en;
+    st=1,+00:00;
+    sh=1,ca;
+    shd=1,2;
+    unit=NET01,,jpluser,;
+    {
+        ty=n;
+        cm="NET01ネット コメント";
+        sz=20x28;
+        el=JOB01-NET01,j,+240+144;
+        el=JOB02-NET01,j,+560+144;
+        el=FLCK_DDDD-NET01,j,+880+144;
+        ar=(f=JOB01-NET01,t=JOB02-NET01,seq);
+        ar=(f=JOB02-NET01,t=FLCK_DDDD-NET01,seq);
+        sd=1,2018/11/01;
+        st=1,+00:00;
+        cy=1,(1.d);ty
+        sh=1,ca;
+        shd=1,2;
+        de=n;
+        ha=y;
+        unit=JOB01-NET01,,jpluser,;
+        {
+            ty=j;
+            cm="JOB01-NET01 ジョブ コメント";
+            te="/usr/bin/JOB01-NET01.sh";
+            un="unusr";
+            tho=0;
+            eu=def;
+        }
+        unit=JOB02-NET01,,jpluser,;
+        {
+            ty=j;
+            cm="JOB02-NET01 ジョブ コメント";
+            te="/usr/bin/JOB02-NET01.sh";
+            un="appadam";
+            tho=0;
+            eu=def;
+            ha=y;
+        }
+        unit=FLCK_DDDD-NET01,,jpluser,;
+        {
+            ty=flwj;
+            cm="FLCK_DDDD-NET01 FLCKジョブ コメント";
+            flwf="FLCK_DDDD-NET01-test.data";
+            flwc=c:m;
+            flco=y;
+            flwi=30;
+            eu=def;
+        }
+    }
+    unit=NET02,,jpluser,;
+    {
+        ty=n;
+        cm="NET02 ジョブネット コメント";
+        sz=10x8;
+        el=JOB04-NET02,j,+240+144;
+        el=JOB05-NET02,j,+560+336;
+        el=FLCK_DDDD-NET02,j,+880+528;
+        ar=(f=JOB04-NET02,t=JOB05-NET02,seq);
+        ar=(f=JOB05-NET02,t=FLCK_DDDD-NET02,seq);
+        sd=1,2018/11/01;
+        st=1,17:00;
+        cy=1,(1,d);
+        sh=1,ca;
+        shd=1,2;
+        de=n;
+        unit=JOB04-NET02,,jpluser,;
+        {
+            ty=j;
+            cm="JOB04-NET02 ジョブ コメント";
+            te="/usr/bin/JOB04-NET02.sh";
+            un="unusr";
+            tho=0;
+            eu=def;
+        }
+        unit=JOB05-NET02,,jp1user,;
+        {
+            ty=j;
+            cm="=JOB05-NET02 ジョブ ID=HULFTID csvfile コメント";
+            te="/HULFT/JOB05-NET02-hulsnd.sh -f IDhogeHULFT";
+            un="hulft";
+            tho=0;
+            eu=def;
+        }
+        unit=FLCK_DDDD-NET02,,jpluser,;
+        {
+            ty=flwj;
+            cm="FLCK_DDDD-NET02 FLCKジョブ コメント";
+            flwf="FLCK_DDDD-NET02-test.data";
+            flwc=c:m;
+            flco=y;
+            flwi=30;
+            eu=def;
+        }
+    }
+    unit=NET03,,jpluser,;
+    {
+        ty=n;
+        cm="NET03 ジョブネット コメント";
+        sz=10x8;
+        el=JOB06-NET03,j,+240+144;
+        el=JOB07-NET03,j,+560+336;
+        el=FLCK_DDDD-NET03,j,+880+528;
+        ar=(f=JOB06-NET03,t=JOB07-NET03,seq);
+        ar=(f=JOB07-NET03,t=FLCK_DDDD-NET03,seq);
+        sd=1,2018/11/01;
+        st=1,17:00;
+        cy=1,(1,d);
+        sh=1,ca;
+        shd=1,2;
+        de=n;
+        unit=JOB06-NET03,,jpluser,;
+        {
+            ty=j;
+            cm="JOB06-NET03 ジョブ コメント";
+            te="/usr/bin/JOB04-NET02.sh";
+            un="unusr";
+            tho=0;
+            eu=def;
+        }
+        unit=JOB07-NET03,,jp1user,;
+        {
+            ty=j;
+            cm="=JOB05-NET02 ジョブ ID=HULFTID csvfile コメント";
+            te="/HULFT/JOB05-NET02-hulsnd.sh -f IDhogeHULFT";
+            un="hulft";
+            tho=0;
+            eu=def;
+        }
+        unit=FLCK_DDDD-NET03,,jpluser,;
+        {
+            ty=flwj;
+            cm="FLCK_DDDD-NET03 FLCKジョブ コメント";
+            flwf="FLCK_DDDD-NET02-test.data";
+            flwc=c:m;
+            flco=y;
+            flwi=30;
+            eu=def;
+        }
+    }
+}
