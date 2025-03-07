@@ -7,20 +7,20 @@ import org.unclazz.jp1ajs2.unitdef.FullQualifiedName;
 import org.unclazz.jp1ajs2.unitdef.Parameter;
 import org.unclazz.jp1ajs2.unitdef.Unit;
 import org.unclazz.jp1ajs2.unitdef.parameter.UnitType;
-import org.westclan.kntools.jp1ajsfigure.model.AJobUnit;
+import org.westclan.kntools.jp1ajsfigure.model.CJobUnit;
 
 /**
  * ジョブユニットのクラス
  */
-public class BuildAJobUnit {
+public class BuildCJobUnit {
 
     /**
      * ジョブユニットのクラス組み立て
      * 
-     * @param Unit Unit オブジェクト
+     * @param ComUnit Unit オブジェクト
      * @return boolean
      */
-    public AJobUnit buildAJobUnit(Unit unit) {
+    public CJobUnit buildCJobUnit(Unit unit) {
 
         // 完全ユニット名
         FullQualifiedName fullQualifiedName = unit.getFullQualifiedName();
@@ -36,7 +36,7 @@ public class BuildAJobUnit {
         List<Parameter> parameters = unit.getParameters();
 
         // ジョブクラスを生成して、データを設定していく
-        AJobUnit unitJob = new AJobUnit();
+        CJobUnit unitJob = new CJobUnit();
 
         // UnitNetにデータをセット
         unitJob.setFullQualifiedName(fullQualifiedName);

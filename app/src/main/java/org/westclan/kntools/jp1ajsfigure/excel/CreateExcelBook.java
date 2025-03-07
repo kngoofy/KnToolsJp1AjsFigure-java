@@ -40,15 +40,15 @@ public class CreateExcelBook {
             // (1) Index シートのデータプロット
             // (0) Index シートにデータプをロットする
             RoleIndexSheet indexSheet = new RoleIndexSheet();
-            indexSheet.roleIndexSheet(workbook, unitString);
+            indexSheet.roleSheetIndex(workbook, unitString);
 
             // (2) トップAJSシートのデータプロット
             RoleTopAjsNetSheet topAjsSheet = new RoleTopAjsNetSheet();
-            topAjsSheet.roleTopAjsNet(workbook, unitString);
+            topAjsSheet.roleSheetTopAjs(workbook, unitString);
 
             // (3) ネットシートのデータプロット
             RoleNetSheet nets = new RoleNetSheet();
-            nets.roleNetSheet(workbook, unitString);
+            nets.roleSheetNet(workbook, unitString);
 
             // (4) テンプレートシートを削除
             workbook.removeSheetAt(workbook.getSheetIndex("Templeate-sheet"));

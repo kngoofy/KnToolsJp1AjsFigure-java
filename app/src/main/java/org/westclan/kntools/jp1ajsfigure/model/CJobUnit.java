@@ -3,28 +3,33 @@ package org.westclan.kntools.jp1ajsfigure.model;
 import java.util.HashMap;
 import java.util.List;
 
-import org.unclazz.jp1ajs2.unitdef.Attributes;
-import org.unclazz.jp1ajs2.unitdef.FullQualifiedName;
+// import org.unclazz.jp1ajs2.unitdef.Attributes;
+// import org.unclazz.jp1ajs2.unitdef.FullQualifiedName;
 import org.unclazz.jp1ajs2.unitdef.Parameter;
-import org.unclazz.jp1ajs2.unitdef.parameter.UnitType;
+// import org.unclazz.jp1ajs2.unitdef.parameter.UnitType;
 
 /**
  * ジョブ定義情報 クラス
  */
-public class AJobUnit {
+public class CJobUnit extends ComUnit implements IUnit {
 
     EJp1AjsUnitType enumtype = EJp1AjsUnitType.UNIT_UNIX_JOB;
     String unitType = EJp1AjsUnitType.UNIT_UNIX_JOB.getName(); // "job-fjwj"
 
-    // ユニットタイプ
-    UnitType ty;
+    // // ユニット名
+    // String name = "";
 
-    // 完全ユニット名
-    String fullQualifiedName = "";
-    // ユニット名
-    String name = "";
-    // ユニットコメント
-    String cm = "";
+    // // Attribute ex. ユニットの所有者 ex. jp1user
+    // String jp1UserName = "";
+
+    // // ユニットタイプ
+    // UnitType ty;
+
+    // // ユニットコメント
+    // String cm = "";
+
+    // // 完全ユニット名
+    // String fullQualifiedName = "";
 
     String te = ""; // "コマンドテキスト";
     String sc = ""; // "スクリプトファイル名";
@@ -34,104 +39,102 @@ public class AJobUnit {
     String eu = ""; // {ent|def};
     String flwf = "";
 
-    // Attribute ex. ユニットの所有者 ex. jp1user
-    String jp1UserName = "";
-
     // ハッシュ
     HashMap<String, String> unitJobArraynew = new HashMap<String, String>();
 
-    /**
-     * 完全ユニット名をセット
-     * 
-     * @param fullQualifiedName
-     */
-    public void setFullQualifiedName(FullQualifiedName fullQualifiedName) {
-        this.fullQualifiedName = "/" + String.join("/", fullQualifiedName.getFragments());
-    }
+    // /**
+    // * 完全ユニット名をセット
+    // *
+    // * @param fullQualifiedName
+    // */
+    // public void setFullQualifiedName(FullQualifiedName fullQualifiedName) {
+    // this.fullQualifiedName = "/" + String.join("/",
+    // fullQualifiedName.getFragments());
+    // }
 
-    /**
-     * 完全ユニット名を取得
-     * 
-     * @return
-     */
-    public String getFullQualifiedName() {
-        return this.fullQualifiedName;
-    }
+    // /**
+    // * 完全ユニット名を取得
+    // *
+    // * @return
+    // */
+    // public String getFullQualifiedName() {
+    // return this.fullQualifiedName;
+    // }
 
-    /**
-     * アトリビュートをセット
-     * 
-     * @param attributes
-     */
-    public void setAttributes(Attributes attributes) {
-        this.jp1UserName = attributes.getJP1UserName();
-    }
+    // /**
+    // * アトリビュートをセット
+    // *
+    // * @param attributes
+    // */
+    // public void setAttributes(Attributes attributes) {
+    // this.jp1UserName = attributes.getJP1UserName();
+    // }
 
-    /**
-     * ユニット名をセット
-     * 
-     * @param name
-     */
-    public void setNAME(String name) {
-        this.name = name;
-    }
+    // /**
+    // * ユニット名をセット
+    // *
+    // * @param name
+    // */
+    // public void setNAME(String name) {
+    // this.name = name;
+    // }
 
-    /**
-     * ユニット名を取得
-     * 
-     * @return
-     */
-    public String getNAME() {
-        return this.name;
-    }
+    // /**
+    // * ユニット名を取得
+    // *
+    // * @return
+    // */
+    // public String getNAME() {
+    // return this.name;
+    // }
 
-    /**
-     * ユニットタイプをセット
-     * 
-     * @param type
-     */
-    public void setType(UnitType type) {
-        this.ty = type;
-    }
+    // /**
+    // * ユニットタイプをセット
+    // *
+    // * @param type
+    // */
+    // public void setType(UnitType type) {
+    // this.ty = type;
+    // }
 
-    /**
-     * ユニットタイプを取得
-     * 
-     * @return
-     */
-    public UnitType getType() {
-        return this.ty;
-    }
+    // /**
+    // * ユニットタイプを取得
+    // *
+    // * @return
+    // */
+    // public UnitType getType() {
+    // return this.ty;
+    // }
 
-    /**
-     * コメントをセット
-     * 
-     * @param comment
-     */
-    public void setCM(CharSequence comment) {
-        String cmStr = (String) comment;
-        this.cm = cmStr;
-        // jobUnitArraynew.put("cm", cmStr);
-    }
+    // /**
+    // * コメントをセット
+    // *
+    // * @param comment
+    // */
+    // public void setCM(CharSequence comment) {
+    // String cmStr = (String) comment;
+    // this.cm = cmStr;
+    // // jobUnitArraynew.put("cm", cmStr);
+    // }
 
-    /**
-     * コメントをセット
-     * 
-     * @param comment
-     */
-    public void setCM(String cm) {
-        this.cm = cm;
-        // netUnitArraynew.put("cm", cm);
-    }
+    // /**
+    // * コメントをセット
+    // *
+    // * @param comment
+    // */
+    // public void setCM(String cm) {
+    // this.cm = cm;
+    // // netUnitArraynew.put("cm", cm);
+    // }
 
-    /**
-     * コメントを取得
-     * 
-     * @return
-     */
-    public String getCM() {
-        return this.cm;
-    }
+    // /**
+    // * コメントを取得
+    // *
+    // * @return
+    // */
+    // public String getCM() {
+    // return this.cm;
+    // }
 
     /**
      * コマンド文字列をセット
@@ -174,6 +177,7 @@ public class AJobUnit {
      * 
      * @param parameters
      */
+    @Override
     public void setParameters(List<Parameter> parameters) {
         for (var parameter : parameters) {
             var name = parameter.getName();

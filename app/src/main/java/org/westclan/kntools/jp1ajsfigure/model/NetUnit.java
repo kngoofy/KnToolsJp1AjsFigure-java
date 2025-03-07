@@ -4,147 +4,154 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.unclazz.jp1ajs2.unitdef.Attributes;
-import org.unclazz.jp1ajs2.unitdef.FullQualifiedName;
+// import org.unclazz.jp1ajs2.unitdef.Attributes;
+// import org.unclazz.jp1ajs2.unitdef.FullQualifiedName;
 import org.unclazz.jp1ajs2.unitdef.Parameter;
 import org.unclazz.jp1ajs2.unitdef.Unit;
 import org.unclazz.jp1ajs2.unitdef.parameter.AnteroposteriorRelationship;
 import org.unclazz.jp1ajs2.unitdef.parameter.Element;
 import org.unclazz.jp1ajs2.unitdef.parameter.MapSize;
-import org.unclazz.jp1ajs2.unitdef.parameter.UnitType;
+// import org.unclazz.jp1ajs2.unitdef.parameter.UnitType;
 
 /**
  * ネット定義情報 クラス
  */
-public class NetUnit {
+public class NetUnit extends ComUnit implements IUnit {
 
     EJp1AjsUnitType enumtype = EJp1AjsUnitType.UNIT_JOBNET;
     String unitType = EJp1AjsUnitType.UNIT_JOBNET.getName(); // "job-fjwj";
 
-    // ユニットタイプ
-    UnitType ty;
-    // 完全ユニット名
-    String fullQualifiedName = "";
-    // ユニット名
-    String name = "";
+    // // ユニット名
+    // String name = "";
+
+    // // Attribute ex. ユニットの所有者 ex. jp1user
+    // String jp1UserName = "";
+
+    // // ユニットタイプ
+    // UnitType ty;
+
+    // // ユニットコメント
+    // String cm = "";
+
+    // // 完全ユニット名
+    // String fullQualifiedName = "";
+
     // ユニット サイズ ex. sz=10x8;
     String sz = "";
-    // ユニットコメント
-    String cm = "";
-
-    // Attribute ex. ユニットの所有者 ex. jp1user
-    String jp1UserName = "";
 
     // ハッシュ
     HashMap<String, String> unitNetArraynew = new HashMap<String, String>();
 
     // el リスト 要素 ex. el=JOB01-NET01,j,+240+144;
     ArrayList<String> els = new ArrayList<>();
+
     // ar リスト 先行・後続 ex. ar=(f=JOB01-NET01,t=JOB02-NET01,seq);
     ArrayList<String> ars = new ArrayList<>();
 
     // サブユニット
     List<Unit> subUnits;
 
-    /**
-     * 完全ユニット名をセット
-     * 
-     * @param fullQualifiedName
-     */
-    public void setFullQualifiedName(FullQualifiedName fullQualifiedName) {
-        this.fullQualifiedName = "/" + String.join("/", fullQualifiedName.getFragments());
-        // System.out.println(this.fullQualifiedName);
-    }
+    // /**
+    // * 完全ユニット名をセット
+    // *
+    // * @param fullQualifiedName
+    // */
+    // public void setFullQualifiedName(FullQualifiedName fullQualifiedName) {
+    // this.fullQualifiedName = "/" + String.join("/",
+    // fullQualifiedName.getFragments());
+    // // System.out.println(this.fullQualifiedName);
+    // }
 
-    /**
-     * 完全ユニット名を取得
-     * 
-     * @return
-     */
-    public String getFullQualifiedName() {
-        return this.fullQualifiedName;
-    }
+    // /**
+    // * 完全ユニット名を取得
+    // *
+    // * @return
+    // */
+    // public String getFullQualifiedName() {
+    // return this.fullQualifiedName;
+    // }
 
-    /**
-     * アトリビュートをセット (JP1ユーザ名だけ設定)
-     * 
-     * @param attributes
-     */
-    public void setAttributes(Attributes attributes) {
-        this.jp1UserName = attributes.getJP1UserName();
-    }
+    // /**
+    // * アトリビュートをセット (JP1ユーザ名だけ設定)
+    // *
+    // * @param attributes
+    // */
+    // public void setAttributes(Attributes attributes) {
+    // this.jp1UserName = attributes.getJP1UserName();
+    // }
 
-    /**
-     * ユニット名をセット
-     * 
-     * @param name
-     */
-    public void setNAME(String name) {
-        this.name = name;
-    }
+    // /**
+    // * ユニット名をセット
+    // *
+    // * @param name
+    // */
+    // public void setNAME(String name) {
+    // this.name = name;
+    // }
 
-    /**
-     * ユニット名を取得
-     * 
-     * @return
-     */
-    public String getNAME() {
-        return this.name;
-    }
+    // /**
+    // * ユニット名を取得
+    // *
+    // * @return
+    // */
+    // public String getNAME() {
+    // return this.name;
+    // }
 
-    /**
-     * ユニットタイプをセット
-     * 
-     * @param type
-     */
-    public void setType(UnitType type) {
-        this.ty = type;
-    }
+    // /**
+    // * ユニットタイプをセット
+    // *
+    // * @param type
+    // */
+    // public void setType(UnitType type) {
+    // this.ty = type;
+    // }
 
-    /**
-     * ユニットタイプを取得
-     * 
-     * @return
-     */
-    public UnitType getType() {
-        return this.ty;
-    }
+    // /**
+    // * ユニットタイプを取得
+    // *
+    // * @return
+    // */
+    // public UnitType getType() {
+    // return this.ty;
+    // }
 
-    /**
-     * メントをセット
-     * 
-     * @param comment
-     */
-    public void setCM(CharSequence comment) {
-        String cmStr = (String) comment;
-        this.cm = cmStr;
-        // jobUnitArraynew.put("cm", cmStr);
-    }
+    // /**
+    // * コメントをセット
+    // *
+    // * @param comment
+    // */
+    // public void setCM(CharSequence comment) {
+    // String cmStr = (String) comment;
+    // this.cm = cmStr;
+    // // jobUnitArraynew.put("cm", cmStr);
+    // }
 
-    /**
-     * コメントをセット
-     * 
-     * @param comment
-     */
-    public void setCM(String cm) {
-        this.cm = cm;
-        // netUnitArraynew.put("cm", cm);
-    }
+    // /**
+    // * コメントをセット
+    // *
+    // * @param comment
+    // */
+    // public void setCM(String cm) {
+    // this.cm = cm;
+    // // netUnitArraynew.put("cm", cm);
+    // }
 
-    /**
-     * コメントを取得
-     * 
-     * @return
-     */
-    public String getCM() {
-        return cm;
-    }
+    // /**
+    // * コメントを取得
+    // *
+    // * @return
+    // */
+    // public String getCM() {
+    // return cm;
+    // }
 
     /**
      * Parameters 各種パラメータを設定していく
      * 
      * @param parameters
      */
+    @Override
     public void setParameters(List<Parameter> parameters) {
 
         for (var parameter : parameters) {

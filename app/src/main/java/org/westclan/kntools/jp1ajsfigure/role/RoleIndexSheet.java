@@ -9,19 +9,19 @@ import org.westclan.kntools.jp1ajsfigure.excel.UpdateSheetIndex;
 import org.westclan.kntools.jp1ajsfigure.model.NetUnit;
 
 /**
- * Indexシート組み立て 役割クラス
+ * Index シート組み立て 役割クラス
  */
 public class RoleIndexSheet {
 
     /**
-     * Index シートを組み立てるクラス
+     * Index シートを組み立てる
      * 
      * @param workbook   ワークブック
      * @param unitString JP1/AJS 定義の文字列
      * @return
      * @throws IOException
      */
-    public boolean roleIndexSheet(Workbook workbook, String unitString) throws IOException {
+    public boolean roleSheetIndex(Workbook workbook, String unitString) throws IOException {
 
         // データ組み立て
         // NetUnit クラスのデータ組み立て
@@ -36,10 +36,10 @@ public class RoleIndexSheet {
         // Index シートにデータをプロットするため クラスを new
         UpdateSheetIndex opeSheet = new UpdateSheetIndex();
 
-        // Indexシートに AJSトップ名をプロット
+        // (A) Indexシートに AJSトップ名をプロット
         opeSheet.updateSheetIndexAjsName(workbook, topNetUnit);
 
-        // Indexシートに 下位ネットを一覧プロット
+        // (b) Indexシートに 下位ネットを一覧プロット
         opeSheet.updateSheetIndexNets(workbook, childUnits);
 
         return true;

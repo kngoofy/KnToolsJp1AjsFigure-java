@@ -22,8 +22,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.unclazz.jp1ajs2.unitdef.Unit;
 import org.unclazz.jp1ajs2.unitdef.parameter.UnitType;
 import org.unclazz.jp1ajs2.unitdef.query.Queries;
-import org.westclan.kntools.jp1ajsfigure.builder.BuildAJobUnit;
-import org.westclan.kntools.jp1ajsfigure.model.AJobUnit;
+import org.westclan.kntools.jp1ajsfigure.builder.BuildCJobUnit;
+import org.westclan.kntools.jp1ajsfigure.model.CJobUnit;
 // import org.westclan.kntools.jp1ajsfigure.util.AnchorGroupUnit;
 // import org.westclan.kntools.jp1ajsfigure.util.CreateShapeGroupUnit;
 // import org.westclan.kntools.jp1ajsfigure.util.GeneratorID;
@@ -66,10 +66,10 @@ public class UpdateSheetNet extends AUpdateSheet {
         Sheet sheet = workbook.getSheet(sheetName);
 
         // ジョブ組み立て用
-        BuildAJobUnit opeUnit = new BuildAJobUnit();
+        BuildCJobUnit opeUnit = new BuildCJobUnit();
 
         // ネット AJobUnitクラスのArrayList
-        ArrayList<AJobUnit> listAJjobUnits = new ArrayList<>();
+        ArrayList<CJobUnit> listAJjobUnits = new ArrayList<>();
 
         // Figureの最も下のセルを保持
         int maxYCoord = 0;
@@ -85,7 +85,7 @@ public class UpdateSheetNet extends AUpdateSheet {
             }
 
             //
-            var AJobUnit = opeUnit.buildAJobUnit(netUnit.getSubUnit(el.getUnitName()));
+            var AJobUnit = opeUnit.buildCJobUnit(netUnit.getSubUnit(el.getUnitName()));
             listAJjobUnits.add(AJobUnit);
         }
 
@@ -105,7 +105,7 @@ public class UpdateSheetNet extends AUpdateSheet {
      * @return
      * @throws IOException
      */
-    public boolean updateSheetNetAJobs(Workbook workbook, Sheet sheet, int rowOffset, ArrayList<AJobUnit> AJobUnits)
+    public boolean updateSheetNetAJobs(Workbook workbook, Sheet sheet, int rowOffset, ArrayList<CJobUnit> AJobUnits)
             throws IOException {
 
         // セルスタイル作成
@@ -161,7 +161,7 @@ public class UpdateSheetNet extends AUpdateSheet {
      * @return
      */
     boolean insertValueToCellAJobUnit(int rowIndex, int colIndex, Workbook workbook, CellStyle[] cellStyles, Cell cell,
-            AJobUnit unit) {
+            CJobUnit unit) {
 
         // カラム 列別の処理
         switch (colIndex) {

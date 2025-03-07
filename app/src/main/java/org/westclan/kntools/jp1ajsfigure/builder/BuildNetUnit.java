@@ -68,7 +68,7 @@ public class BuildNetUnit {
     /**
      * ネットユニットのクラスの組み立て
      * 
-     * @param Unit Unit オブジェクト
+     * @param ComUnit Unit オブジェクト
      * @return boolean
      */
     public NetUnit buildNetUnit(Unit unit) {
