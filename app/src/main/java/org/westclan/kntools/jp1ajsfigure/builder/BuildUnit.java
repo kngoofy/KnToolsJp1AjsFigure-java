@@ -9,7 +9,7 @@ import org.westclan.kntools.jp1ajsfigure.model.ComUnit;
 /**
  * 共通のユニットのクラス
  */
-public class BuildUnit<C> {
+public class BuildUnit {
 
     /**
      * 共通ユニットのクラスの組み立て

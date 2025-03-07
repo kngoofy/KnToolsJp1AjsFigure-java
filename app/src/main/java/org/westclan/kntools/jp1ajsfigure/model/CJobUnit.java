@@ -16,21 +16,6 @@ public class CJobUnit extends ComUnit implements IUnit {
     EJp1AjsUnitType enumtype = EJp1AjsUnitType.UNIT_UNIX_JOB;
     String unitType = EJp1AjsUnitType.UNIT_UNIX_JOB.getName(); // "job-fjwj"
 
-    // // ユニット名
-    // String name = "";
-
-    // // Attribute ex. ユニットの所有者 ex. jp1user
-    // String jp1UserName = "";
-
-    // // ユニットタイプ
-    // UnitType ty;
-
-    // // ユニットコメント
-    // String cm = "";
-
-    // // 完全ユニット名
-    // String fullQualifiedName = "";
-
     String te = ""; // "コマンドテキスト";
     String sc = ""; // "スクリプトファイル名";
     String un = ""; // "実行ユーザー名";
@@ -41,100 +26,6 @@ public class CJobUnit extends ComUnit implements IUnit {
 
     // ハッシュ
     HashMap<String, String> unitJobArraynew = new HashMap<String, String>();
-
-    // /**
-    // * 完全ユニット名をセット
-    // *
-    // * @param fullQualifiedName
-    // */
-    // public void setFullQualifiedName(FullQualifiedName fullQualifiedName) {
-    // this.fullQualifiedName = "/" + String.join("/",
-    // fullQualifiedName.getFragments());
-    // }
-
-    // /**
-    // * 完全ユニット名を取得
-    // *
-    // * @return
-    // */
-    // public String getFullQualifiedName() {
-    // return this.fullQualifiedName;
-    // }
-
-    // /**
-    // * アトリビュートをセット
-    // *
-    // * @param attributes
-    // */
-    // public void setAttributes(Attributes attributes) {
-    // this.jp1UserName = attributes.getJP1UserName();
-    // }
-
-    // /**
-    // * ユニット名をセット
-    // *
-    // * @param name
-    // */
-    // public void setNAME(String name) {
-    // this.name = name;
-    // }
-
-    // /**
-    // * ユニット名を取得
-    // *
-    // * @return
-    // */
-    // public String getNAME() {
-    // return this.name;
-    // }
-
-    // /**
-    // * ユニットタイプをセット
-    // *
-    // * @param type
-    // */
-    // public void setType(UnitType type) {
-    // this.ty = type;
-    // }
-
-    // /**
-    // * ユニットタイプを取得
-    // *
-    // * @return
-    // */
-    // public UnitType getType() {
-    // return this.ty;
-    // }
-
-    // /**
-    // * コメントをセット
-    // *
-    // * @param comment
-    // */
-    // public void setCM(CharSequence comment) {
-    // String cmStr = (String) comment;
-    // this.cm = cmStr;
-    // // jobUnitArraynew.put("cm", cmStr);
-    // }
-
-    // /**
-    // * コメントをセット
-    // *
-    // * @param comment
-    // */
-    // public void setCM(String cm) {
-    // this.cm = cm;
-    // // netUnitArraynew.put("cm", cm);
-    // }
-
-    // /**
-    // * コメントを取得
-    // *
-    // * @return
-    // */
-    // public String getCM() {
-    // return this.cm;
-    // }
 
     /**
      * コマンド文字列をセット

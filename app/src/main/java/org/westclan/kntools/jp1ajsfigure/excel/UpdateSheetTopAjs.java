@@ -4,31 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.poi.common.usermodel.HyperlinkType;
-// import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
-// import org.apache.poi.ss.usermodel.FillPatternType;
-// import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.Hyperlink;
-// import org.apache.poi.ss.usermodel.IndexedColors;
-// import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-// import org.apache.poi.xssf.usermodel.XSSFClientAnchor;
-// import org.apache.poi.xssf.usermodel.XSSFConnector;
-// import org.apache.poi.xssf.usermodel.XSSFDrawing;
-// import org.openxmlformats.schemas.drawingml.x2006.main.STLineEndLength;
-// import org.openxmlformats.schemas.drawingml.x2006.main.STLineEndType;
-// import org.openxmlformats.schemas.drawingml.x2006.main.STLineEndWidth;
 import org.unclazz.jp1ajs2.unitdef.Unit;
-// import org.unclazz.jp1ajs2.unitdef.parameter.UnitType;
 import org.unclazz.jp1ajs2.unitdef.query.Queries;
 import org.westclan.kntools.jp1ajsfigure.builder.BuildNetUnit;
 import org.westclan.kntools.jp1ajsfigure.model.NetUnit;
-// import org.westclan.kntools.jp1ajsfigure.util.AnchorGroupUnit;
-// import org.westclan.kntools.jp1ajsfigure.util.CreateShapeGroupUnit;
-// import org.westclan.kntools.jp1ajsfigure.util.GeneratorID;
-// import org.westclan.kntools.jp1ajsfigure.util.LoadBuildPicture;
 
 /**
  * TopAjs シートの組み立てクラス
