@@ -30,9 +30,9 @@ public class CreateShapeGroupUnit {
             String unitName, String unitComment) {
         // this.workbook = workbook;
         this.drawing = drawing;
-        this.shapeGroup = createGroup(groupUnit);
+        this.shapeGroup = createGroup(groupUnit, fullQualifiedName, unitName);
         createPicture(groupUnit, picIdx, fullQualifiedName, unitName);
-        createTextBox(groupUnit, unitName, unitComment);
+        createTextBox(groupUnit, fullQualifiedName, unitName, unitComment);
 
         // 図形固定化 ex. <xdr:twoCellAnchor editAs="absolute">
         var listTCA = drawing.getCTDrawing().getTwoCellAnchorList();
@@ -49,7 +49,7 @@ public class CreateShapeGroupUnit {
      * @param groupUnit Groupのアンカー
      * @return
      */
-    private XSSFShapeGroup createGroup(AnchorGroupUnit groupUnit) {
+    private XSSFShapeGroup createGroup(AnchorGroupUnit groupUnit, String fullQualifiedName, String unitName) {
         //
         // XSSFClientAnchor anchor = new XSSFClientAnchor(
         // 0, 0, 0, 0, 2, 2, 6, 6);
@@ -57,6 +57,8 @@ public class CreateShapeGroupUnit {
         XSSFClientAnchor anchor = groupUnit.shapeGroup.getAnchor();
         XSSFShapeGroup shapeGroup = this.drawing.createGroup(anchor);
 
+        shapeGroup.getCTGroupShape().getNvGrpSpPr().getCNvPr()
+                .setId(GeneratorID.getId(fullQualifiedName + "/" + unitName + "-Group"));
         // var a = shapeGroup.getCTGroupShape().getGrpSpPr();
         // System.out.println(a);
         // var b = shapeGroup.getCTGroupShape().getNvGrpSpPr();
@@ -96,7 +98,8 @@ public class CreateShapeGroupUnit {
      * @param groupUnit ユニット名のアンカー
      * @param text      ユニット名テキスト
      */
-    private void createTextBox(AnchorGroupUnit groupUnit, String UnitName, String unitComment) {
+    private void createTextBox(AnchorGroupUnit groupUnit, String fullQualifiedName, String UnitName,
+            String unitComment) {
         //
         // XSSFChildAnchor childAnchor = new XSSFChildAnchor(10, 230000, 750000,
         // 230000);
@@ -107,6 +110,9 @@ public class CreateShapeGroupUnit {
         textBox.setFillColor(250, 250, 250);
         textBox.setText(UnitName + "\n" + unitComment);
         textBox.setTextAutofit(TextAutofit.SHAPE);
+
+        textBox.getCTShape().getNvSpPr().getCNvPr()
+                .setId(GeneratorID.getId(fullQualifiedName + "/" + UnitName + "-TextBox"));
     }
 
     public String ToString() {

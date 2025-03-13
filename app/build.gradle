@@ -63,13 +63,13 @@ tasks.named('test') {
 }
 
 tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
-  archiveBaseName = 'kntoolsjp1ajsfigure-all.jar'
+  archiveBaseName = 'kntoolsjp1ajsfigure-all'
   archiveClassifier = ''
   archiveVersion = ''
 }
 
-tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
-  archiveBaseName = 'kntoolsjp1ajsfigure-all.jar'
-  archiveClassifier = ''
-  archiveVersion = ''
-}
+// tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
+//   archiveBaseName = 'kntoolsjp1ajsfigure-all.jar'
+//   archiveClassifier = ''
+//   archiveVersion = ''
+// }
