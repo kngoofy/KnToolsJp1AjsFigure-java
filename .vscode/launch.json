@@ -25,7 +25,6 @@
             "request": "launch",
             "mainClass": "org.westclan.kntools.jp1ajsfigure.util.FromFileMain",
             "args": [
-                "app\\src\\main\\resources\\Template-KnToolsJp1AjsFigure.xlsm",
                 "Target\\FromFileKnToolsJp1AjsFigure.xlsm",
                 "app\\src\\test\\resources\\def\\jp1ajs.def"
             ],

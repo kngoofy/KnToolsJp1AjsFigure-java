@@ -33,6 +33,10 @@ public class CreateExcelBook {
      */
     public boolean createExcelBook(String templateBook, String destBook, String unitString) throws IOException {
 
+        //
+        System.out.println("Template Book :> " + templateBook);
+        System.out.println("Genarate Book :> " + destBook);
+
         // テンプレートのExcelBookを開いて、Sheetを作成していく
         try (FileInputStream fis = new FileInputStream(templateBook);
                 Workbook workbook = new XSSFWorkbook(fis);) {

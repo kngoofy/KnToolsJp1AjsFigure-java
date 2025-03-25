@@ -16,30 +16,33 @@ public class FromFileMain {
     public static void main(String[] args) throws IOException {
 
         // Java Class 表示
-        System.out.println("Java ClassPath :=> " + System.getProperty("java.class.path"));
+        // System.out.println("Java ClassPath :=> " +
+        // System.getProperty("java.class.path"));
 
-        String netImage = Util.getProperties("file.ext-net.png");
-        String unixJobImage = Util.getProperties("file.ext-unixjob.png");
-        String pcJobImage = Util.getProperties("file.ext-pcjob.png");
-        String flwjImage = Util.getProperties("file.ext-flwj.png");
+        // String netImage = Util.getProperties("file.ext-net.png");
+        // String unixJobImage = Util.getProperties("file.ext-unixjob.png");
+        // String pcJobImage = Util.getProperties("file.ext-pcjob.png");
+        // String flwjImage = Util.getProperties("file.ext-flwj.png");
 
-        System.out.println("netImage :=" + netImage);
-        System.out.println("unixJobImage :=" + unixJobImage);
-        System.out.println("pcJobImage :=" + pcJobImage);
-        System.out.println("flwjImage :=" + flwjImage);
+        // System.out.println("netImage :=" + netImage);
+        // System.out.println("unixJobImage :=" + unixJobImage);
+        // System.out.println("pcJobImage :=" + pcJobImage);
+        // System.out.println("flwjImage :=" + flwjImage);
+
+        String templateExcelBook = Util.getProperties("file.template-excelbook");
 
         // 引数のチェック
-        if (args.length < 3) {
+        if (args.length < 2) {
             usage();
             System.exit(1);
         }
 
-        String templateExcelBook = args[0];
-        String createExcelBook = args[1];
-        String defFile = args[2];
-        System.out.println(templateExcelBook + " : templateExcelBook");
-        System.out.println(createExcelBook + " : CreateExcelBook");
-        System.out.println(defFile + " : defFile");
+        // String templateExcelBook = args[0];
+        String createExcelBook = args[0];
+        String defFile = args[1];
+        // System.out.println(templateExcelBook + " : templateExcelBook");
+        // System.out.println(createExcelBook + " : CreateExcelBook");
+        System.out.println("ajsdef file   :> " + defFile);
 
         String line = "";
         var builder = new StringBuilder();
@@ -114,7 +117,7 @@ public class FromFileMain {
                 Usage: 引数はこの2つです。
                   生成するExcelBook名
                   JP1/AJS定義ファイル
-                ex. thisjava server.xlsx ajs.def
+                ex. ThisJavaExce server.xlsx server-ajs.def
                   """;
 
         System.out.println(message);
