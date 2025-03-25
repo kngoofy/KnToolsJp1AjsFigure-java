@@ -22,14 +22,15 @@ public class UpdateSheetTopAjs extends AUpdateSheet {
     /**
      * TopAjs シートのシート名を TopAjsネット名に変更する
      * 
-     * @param workbook   ワークシート
-     * @param topAjsUnit TopAjsネット名
+     * @param workbook ワークシート
+     * @param topUnit  TopAjs の Unit
      * @return
      */
-    public boolean renameAjsSheet(Workbook workbook, NetUnit topAjsUnit) {
+    // public boolean renameAjsSheet(Workbook workbook, NetUnit topAjsUnit) {
+    public boolean renameAjsSheet(Workbook workbook, Unit topUnit) {
 
         // TopAjsネット名を取得
-        String topUnitName = topAjsUnit.getNAME();
+        String topUnitName = topUnit.getName();
 
         // ajs-topシートを TopAjsネット名に変更
         int ajstopSheet = workbook.getSheetIndex("ajs-top");

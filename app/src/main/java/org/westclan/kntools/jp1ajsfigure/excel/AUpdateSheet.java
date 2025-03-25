@@ -158,10 +158,11 @@ public abstract class AUpdateSheet {
 
             //
             // System.out.println("NetName=<" + netUnit.getName() + "> arStr : " + arStr);
-            System.out.println("NetName=<" + netUnit.getName() + ">"
-                    + " fromUnitName:" + fromUnitName + " fromUnitNameID:[" + fromUnitNameID + "] "
-                    + " , "
-                    + " toUnitName:" + toUnitName + " toUnitNameID:[" + toUnitNameID + "] ");
+            // System.out.println("NetName=<" + netUnit.getName() + ">"
+            // + " fromUnitName:" + fromUnitName + " fromUnitNameID:[" + fromUnitNameID + "]
+            // "
+            // + " , "
+            // + " toUnitName:" + toUnitName + " toUnitNameID:[" + toUnitNameID + "] ");
 
             connector.setLineWidth(1);
             connector.setLineStyleColor(128, 0, 0);

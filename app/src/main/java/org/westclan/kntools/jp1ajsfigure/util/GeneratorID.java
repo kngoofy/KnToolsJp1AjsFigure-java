@@ -22,12 +22,12 @@ public class GeneratorID {
     public static long getId(String key) {
 
         if (mapKeyToId.containsKey(key)) {
-            System.out.println("<key generator> 既に存在 [" + key + "] : [" + id + "]");
+            // System.out.println("<key generator> 既に存在 [" + key + "] : [" + id + "]");
             return getMapID(key);
         }
 
         mapKeyToId.put(key, id);
-        System.out.println("<key generator> [" + key + "] : [" + id + "]");
+        // System.out.println("<key generator> [" + key + "] : [" + id + "]");
         return id++;
     };
 
@@ -38,7 +38,8 @@ public class GeneratorID {
      * @return id
      */
     public static long getMapID(String key) {
-        System.out.println("<request> [" + key + "] : [" + mapKeyToId.get(key) + "]");
+        // System.out.println("<request> [" + key + "] : [" + mapKeyToId.get(key) +
+        // "]");
         return mapKeyToId.get(key);
     }
 

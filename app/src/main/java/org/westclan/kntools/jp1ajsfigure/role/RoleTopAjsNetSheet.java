@@ -38,6 +38,9 @@ public class RoleTopAjsNetSheet {
         // (B-2) TopAksシートにネット一覧をプロットする
         sheetTopAjsNet.updateSheetTopAjsNetTable(workbook, topUnit);
 
+        // (C-1) テンプレートの ajs-top シートを AJS名に変更
+        sheetTopAjsNet.renameAjsSheet(workbook, topUnit);
+
         return true;
     }
 }
